@@ -1,0 +1,8 @@
+nav.nav#menu 
+  ul.nav__list 
+    each item in nav
+      li.nav__item 
+        a(href=`/${item.link}`).nav__link.link.hover-el
+          +svg(item.link)(class="link__icon")
+          span.link__label= item.label
+    

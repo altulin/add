@@ -1,7 +1,97 @@
-section.promo 
-  .promo__inner.container 
-    h1 hello
-    figure.promo__img
+section.promo#promo
+  +parallax('left')
+  +parallax('right')
+
+  .promo__inner.container
+    .promo__sidebar.sidebar#sidebar
+      button.sidebar__close.close(type="button" aria-label="Закрыть меню")
+        span.close__line.close__line--1
+        span.close__line.close__line--2
+      .sidebar__profile.profile
+        figure.profile__figure 
+          img(src="./img/avatar.png", alt="avatar" width="50" height="50")
+        .profile__content 
+          h3.profile__name Test2412
+          a(href="#" class="profile__link") Get premium 
+      hr.sidebar__hr.hr
+      include ../components/nav
+      hr.sidebar__hr.sidebar__hr--bottom.hr
+      .sidebar__service 
+        +top-link('People nearby', 'sidebar')
+        +top-link('Search', 'sidebar')
+    
+    .promo__content.content 
+      h2.content__title Закончились кредиты?
+      hr.content__hr.hr
+
+      .content__counter.counter
+        .counter__inner 
+          h3.counter__title Скидка 40%
+          p.counter__text Предложение действует в течение:
+          p.counter__timer
+            span.counter__hours 00
+            span.counter__points
+            span.counter__minutes 30
+            span.counter__points
+            span.counter__seconds 00
+
+
+      .content__offers.offers
+        .offers__swiper.swiper
+          .offers__wrapper.swiper-wrapper
+            each item in slider 
+              .offers__slide.swiper-slide.offer
+                
+                .offer__inner
+                  .offer__cover
+                  p.offer__time One time offer!
+                  .offer__price.price 
+                    .price__inner
+                      span.price__val= item.price 
+                      span.price__pic cr
+                      span.price__spec /
+                      span.price__discount $5
+                  
+                  a.offer__link.link-js(href="#") Buy now
+                      
+          .offers__pagination.swiper-pagination
+
+
+      a.content__try(href="#") Try now
+
+      label.content__checkbox.checkbox(for="checkbox")
+        input.checkbox__input(type="checkbox" name="checkbox" id="checkbox")
+        span.checkbox__checkmark
+          +svg('mark')
+        span.checkbox__label
+          span.checkbox__text By clicking Checkbox you agree and accept our  
+            a.checkbox__rule(href="#") Privacy Policy,
+            |
+            | and
+            |
+            a.checkbox__rule(href="#") Terms of use
+
+      .content__diamond.diamond
+        +svg('diamond')(class="diamond__icon diamond__icon--main")
+
+        each item in diamond
+          .diamond__item(class=`diamond__item--${item.svg}`)
+            figure.diamond__figure
+              +svg(item.svg)(class=`diamond__icon diamond__icon--${item.svg}`)
+            p.diamond__text= item.text
+
+
+
+
+
+
+      
+
+
+    
+  
+  
+    
     
     
     

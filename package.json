@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://altulin.github.io/...",
+  "homepage": "https://altulin.github.io/add",
   "scripts": {
     "dev": "gulp development --development",
     "build:test": "gulp production --production --test",
@@ -55,6 +55,10 @@
   },
   "dependencies": {
     "connect-history-api-fallback": "^2.0.0",
-    "normalize.css": "^8.0.1"
+    "gh-pages": "^6.3.0",
+    "mmenu-light": "^3.2.2",
+    "normalize.css": "^8.0.1",
+    "parallax-mouse": "^1.0.1",
+    "swiper": "^11.2.6"
   }
 }

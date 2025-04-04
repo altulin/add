@@ -1,3 +1,5 @@
 @use "./mixins" as m;
 
-@include m.font-load(Roboto, Regular, 400, normal);
+@include m.font-load(Ubuntu, Regular, 400, normal);
+@include m.font-load(Ubuntu, Bold, 700, normal);
+@include m.font-load(Ubuntu, Medium, 500, normal);

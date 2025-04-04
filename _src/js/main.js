@@ -1,16 +1,23 @@
 // import * as dotenv from "dotenv";
 
-// dotenv.config({ path: ".env.development" });
+import { makeHoverLink } from "./modules/hover.js";
+import { makeMenu } from "./modules/menu.js";
+import { parallax } from "./modules/parallax.js";
+import { makeSlider } from "./modules/slider.js";
+import { startTimer } from "./modules/timer.js";
 
-// import dotenv from "dotenv";
-// const result = dotenv.config();
+const handler = () => {
+  makeMenu();
+  makeSlider();
+  makeHoverLink();
+};
 
-// if (result.error) {
-//   throw result.error;
-// }
+const handlerContent = () => {
+  startTimer(1800);
+  parallax();
+};
 
-// console.log(process.env);
+document.addEventListener("DOMContentLoaded", handlerContent);
 
-const handler = () => {};
-
-document.addEventListener("DOMContentLoaded", handler);
+window.onload = handler;
+window.onresize = handler;

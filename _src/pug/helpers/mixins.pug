@@ -45,3 +45,12 @@ mixin img-retina(name, type, alt, className, width, height, ...args)
 //- +img-svg('', '', '', '', '', '')
 mixin img-svg(name, className, alt, width, height)
   img(class=`${className}` src=`${baseDir}img/svg/${name}.svg` alt=alt width=width height=height loading="lazy")
+
+mixin top-link(label, modifier)
+  a.top-link.hover-el(href="#" class = modifier &&  `${modifier}__top-link`)= label
+
+mixin parallax(modifier)
+  .parallax(class=`parallax--${modifier}` data-depth="20")
+    figure.parallax__figure(class=`parallax__figure--${modifier}`) 
+      img(src=`${baseDir}img/${modifier}.png` alt='pattern' width='400' height='400')
+

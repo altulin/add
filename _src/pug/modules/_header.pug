@@ -1,15 +1,28 @@
 header.header#header
-	.header__inner.container.container--header
-		a.header__logo.logo(href="/index.html")
+	.header__inner.container.container--header 
+		a.header__logo(href="/index.html" aria-label="Главная") 
 			+svg('logo')
-			
 
-		nav
-			ul.header__list 
-				each item in list 
-					li.header__item
-						a.header__link(href=`/${item.link}`)= item.link 
+		
+
+		button.header__burger.burger(type="button" aria-label="Открыть меню")
+			span.burger__line.burger__line--1
+			span.burger__line.burger__line--2
+			span.burger__line.burger__line--3
+
+		
+		nav.header__nav
+			+top-link('People nearby', 'header')
+			+top-link('Search', 'header')
 
 
-		h1 hi
+			a.header__premium.premium.hover-el(href="#")
+				span Premium
+				+svg('prem')
+
+		 
+
+		
+		
+	
 			
