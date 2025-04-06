@@ -1699,6 +1699,7 @@ main {
   width: 1.44rem;
   height: 0.875rem;
   background-color: transparent;
+  flex-shrink: 0;
 }
 
 .burger__line {
